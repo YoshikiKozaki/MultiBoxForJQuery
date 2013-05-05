@@ -8,5 +8,6 @@ http://www.joomler.net/multibox/
 
 
 License:Dual licensed under the MIT and GPL licenses.
+
 Copyright (C) Yoshiki Kozaki
 
