@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Yoshiki Kozaki" />
+		<title>MultiBox for jQuery</title>
+		<link rel="stylesheet" href="styles/multibox.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="styles/jquery.vegas.css" type="text/css" media="all" />
+		<!--[if lte IE 6]><link rel="stylesheet" href="styles/multibox-ie6.css" type="text/css" media="all" /><![endif]-->
+		<style type="text/css">
+			body{padding:1em}
+			dl, p{padding-left:1em}
+			dt{font-weight: bold}
+			.red{color:red}
+			.green{color:green}
+		</style>
+	</head>
+	<body>
+		<h1>MultiBox for jQuery Sample</h1>
+		<p>
+			This MultiBox rewrites <a href="https://github.com/samuelbirch/MultiBox">Mr. Samuel Birch's MultiBox</a> to jQuery. <br /><br />
+			I referred to the site of <a href="http://www.phatfusion.net">www.phatfusion.net</a> for this page.<br /><br />
+			Overlay using <a href="http://vegas.jaysalvat.com/" >Vegas Background jQuery Plugin</a><br />
+			<h3>Thanks!! great developers</h3>
+		</p>
+		<p>
+			Sample images by <a href="http://pixabay.com/">http://pixabay.com/</a><br />
+			Sample video by <a href="http://www.nhk.or.jp/creative/">NHK Creative Library</a>
+		</p>
+		<h2>Download</h2>
+		<dl>
+			<dt><a href="https://github.com/YoshikiKozaki/MultiBoxForJQuery/">GitHub</a></dt>
+		</dl>
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="4">
+						<h2>Basic example : images</h2>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a class="sampleimages" id="sample01" href="samples/sample01.jpg" title="Sample Image 01">
+							<img src="samples/th_sample01.jpg" width="160" height="120" />
+						</a>
+						<span class="multiBoxDesc sample01">Sample Image 01 Description</span>
+					</td>
+					<td>
+						<a class="sampleimages" id="sample02" href="samples/sample02.jpg" title="Sample Image 02">
+							<img src="samples/th_sample02.jpg" width="160" height="120" />
+						</a>
+						<span class="multiBoxDesc sample02">Sample Image 02 Description</span>
+					</td>
+					<td>
+						<a class="sampleimages" id="sample03" href="samples/sample03.jpg" title="Sample Image 03">
+							<img src="samples/th_sample03.jpg" width="160" height="120" />
+						</a>
+						<span class="multiBoxDesc sample03">Sample Image 03 Description</span>
+					</td>
+					<td>
+						<a class="sampleimages" id="sample04" href="samples/sample04.jpg" title="Sample Image 04">
+							<img src="samples/th_sample04.jpg" width="160" height="120" />
+						</a>
+						<span class="multiBoxDesc sample04">Sample Image 04 Description</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<dt>code<dt>
+			<dd>
+				<pre><code>&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td colspan=&quot;4&quot;&gt;
+&lt;h2&gt;Basic example : images&lt;/h2&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;a class=&quot;<span class="green">sampleimages</span>&quot; id=&quot;<span class="green">sample01</span>&quot; href=&quot;samples/sample01.jpg&quot; title=&quot;Sample Image 01&quot;&gt;
+&lt;img src=&quot;samples/th_sample01.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;
+&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc <span class="green">sample01</span>&quot;&gt;Sample Image 01 Description&lt;/span&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;a class=&quot;<span class="green">sampleimages</span>&quot; id=&quot;<span class="green">sample02</span>&quot; href=&quot;samples/sample02.jpg&quot; title=&quot;Sample Image 02&quot;&gt;
+&lt;img src=&quot;samples/th_sample02.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;
+&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc <span class="green">sample02</span>&quot;&gt;Sample Image 02 Description&lt;/span&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;a class=&quot;<span class="green">sampleimages</span>&quot; id=&quot;<span class="green">sample03</span>&quot; href=&quot;samples/sample03.jpg&quot; title=&quot;Sample Image 03&quot;&gt;
+&lt;img src=&quot;samples/th_sample03.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;
+&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc <span class="green">sample03</span>&quot;&gt;Sample Image 03 Description&lt;/span&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;a class=&quot;<span class="green">sampleimages</span>&quot; id=&quot;<span class="green">sample04</span>&quot; href=&quot;samples/sample04.jpg&quot; title=&quot;Sample Image 04&quot;&gt;
+&lt;img src=&quot;samples/th_sample04.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;
+&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc <span class="green">sample04</span>&quot;&gt;Sample Image 04 Description&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+				<pre><code>$(&#039;.<span class="green">sampleimages</span>&#039;).jmultibox({
+	descClassName : &#039;multiBoxDesc&#039;,
+	path:&#039;/multibox/&#039;,
+	overlaybg:&#039;sheep-57706_1920.jpg&#039;,
+	useOverlay:1,
+	opac:1
+});</code></pre>
+			</dd>
+		<h2>Basic example : sites</h2>
+		<dl>
+			<dt>
+				<a class="sitesamples" id="site01" href="http://www.joomla.org/" title="Joomla! The CMS Trusted By Millions for their Websites">Joomla!</a>
+				<div class="multiBoxDesc site01">
+				Joomla! is the mobile-ready and user-friendly way to build your website. Choose from thousands of features and designs. Joomla! is free and open source.
+				</div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;sitesamples&quot; id=&quot;site01&quot; href=&quot;http://www.joomla.org/&quot; title=&quot;Joomla! The CMS Trusted By Millions for their Websites&quot;&gt;Joomla!&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc site01&quot;&gt;
+Joomla! is the mobile-ready and user-friendly way to build your website. Choose from thousands of features and designs. Joomla! is free and open source.
+&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="sitesamples" id="site02" href="http://drupal.org/" title="Drupal - Open Source CMS | drupal.org">Drupal</a>
+				<span class="multiBoxDesc site02">Drupal is an open source content management platform powering millions of websites and applications. It’s built, used, and supported by an active and diverse community of people around the world.</span>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;sitesamples&quot; id=&quot;site02&quot; href=&quot;http://drupal.org/&quot; title=&quot;Drupal - Open Source CMS | drupal.org&quot;&gt;Drupal&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc site02&quot;&gt;Drupal is an open source content management platform powering millions of websites and applications. It’s built, used, and supported by an active and diverse community of people around the world.&lt;/span&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="sitesamples" id="site03" href="http://wordpress.org/" title="WordPress &#8250; Blog Tool, Publishing Platform, and CMS">WordPress</a>
+				<span class="multiBoxDesc site03">WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.</span>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;sitesamples&quot; id=&quot;site03&quot; href=&quot;http://wordpress.org/&quot; title=&quot;WordPress &amp;#8250; Blog Tool, Publishing Platform, and CMS&quot;&gt;WordPress&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc site03&quot;&gt;WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.&lt;/span&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="sitesamples" id="site04" href="http://www.movabletype.com/" title="MovableType">MovableType</a>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;sitesamples&quot; id=&quot;site04&quot; href=&quot;http://www.movabletype.com/&quot; title=&quot;MovableType&quot;&gt;MovableType&lt;/a&gt;</code></pre>
+			</dd>
+			<dt>code<dt>
+			<dd>
+				<pre><code>$(&#039;.sitesamples&#039;).jmultibox({
+	descClassName : &#039;multiBoxDesc&#039;,
+	path:&#039;/multibox/&#039;,
+	overlaybg:&#039;sheep-57706_1920.jpg&#039;,
+	useOverlay:1,
+	opac:0.7,
+	useratio:1,
+	ratio:80
+});</code></pre>
+			</dd>
+		</dl>
+		<h2>Basic example : multiple</h2>
+		<dl style="padding-left:1em">
+			<dt>
+				<a class="multisamples" id="multi01" href="http://www.joomla.org/" title="Joomla! The CMS Trusted By Millions for their Websites">Joomla!</a>
+				<div class="multiBoxDesc site01">
+				Joomla! is the mobile-ready and user-friendly way to build your website. Choose from thousands of features and designs. Joomla! is free and open source.
+				</div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;multisamples&quot; id=&quot;multi01&quot; href=&quot;http://www.joomla.org/&quot; title=&quot;Joomla! The CMS Trusted By Millions for their Websites&quot;&gt;Joomla!&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc site01&quot;&gt;
+Joomla! is the mobile-ready and user-friendly way to build your website. Choose from thousands of features and designs. Joomla! is free and open source.
+&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="multisamples" id="multi02" href="samples/sample02.jpg" title="Sample Image 02">
+					<img src="samples/th_sample02.jpg" width="160" height="120" /></a>
+				<span class="multiBoxDesc multi02">Sample Image 02 Description</span>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;multisamples&quot; id=&quot;multi02&quot; href=&quot;samples/sample02.jpg&quot; title=&quot;Sample Image 02&quot;&gt;
+&lt;img src=&quot;samples/th_sample02.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc multi02&quot;&gt;Sample Image 02 Description&lt;/span&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="multisamples" id="multi03" href="http://wordpress.org/" title="WordPress &#8250; Blog Tool, Publishing Platform, and CMS">WordPress</a>
+				<span class="multiBoxDesc multi03">WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.</span>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;multisamples&quot; id=&quot;multi03&quot; href=&quot;http://wordpress.org/&quot; title=&quot;WordPress &amp;#8250; Blog Tool, Publishing Platform, and CMS&quot;&gt;WordPress&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc multi03&quot;&gt;WordPress is web software you can use to create a beautiful website or blog. We like to say that WordPress is both free and priceless at the same time.&lt;/span&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="multisamples" id="multi04" href="samples/sample04.jpg" title="Sample Image 04">
+					<img src="samples/th_sample04.jpg" width="160" height="120" /></a>
+				<span class="multiBoxDesc multi04">Sample Image 04 Description</span>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;multisamples&quot; id=&quot;multi04&quot; href=&quot;samples/sample04.jpg&quot; title=&quot;Sample Image 04&quot;&gt;
+&lt;img src=&quot;samples/th_sample04.jpg&quot; width=&quot;160&quot; height=&quot;120&quot; /&gt;&lt;/a&gt;
+&lt;span class=&quot;multiBoxDesc multi04&quot;&gt;Sample Image 04 Description&lt;/span&gt;</code></pre>
+			</dd>
+			<dt>code<dt>
+			<dd>
+				<pre><code>$(&#039;.multisamples&#039;).jmultibox({
+	descClassName : &#039;multiBoxDesc&#039;,
+	path:&#039;/multibox/&#039;,
+	overlaybg:&#039;14.png&#039;,
+	useOverlay:1,
+	opac:1,
+	useratio:1,
+	ratio:80
+});</code></pre>
+			</dd>
+		</dl>
+		<h2>Advanced example</h2>
+		<dl style="padding-left:1em">
+			<dt>
+				<a class="advancedsamples" id="advanced01" href="samples/bigbang.flv" title="advanced example flv">flv</a>
+				<div class="multiBoxDesc advanced01">
+					<a href="http://www.nhk.or.jp/creative/" target="_blank" style="color:white">Video copyright: NHK Creative Library</a></div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;advancedsamples&quot; id=&quot;advanced01&quot; href=&quot;samples/bigbang.flv&quot; title=&quot;advanced example flv&quot;&gt;flv&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc advanced01&quot;&gt;
+&lt;a href=&quot;http://www.nhk.or.jp/creative/&quot; target=&quot;_blank&quot; style=&quot;color:white&quot;&gt;Video copyright: NHK Creative Library&lt;/a&gt;&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="advancedsamples" id="advanced02" href="samples/bigbang.mp3" title="advanced example mp3">mp3</a>
+				<div class="multiBoxDesc advanced02">
+					<a href="http://www.nhk.or.jp/creative/" target="_blank" style="color:white">Video copyright: NHK Creative Library</a></div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;advancedsamples&quot; id=&quot;advanced01&quot; href=&quot;samples/bigbang.flv&quot; title=&quot;advanced example flv&quot;&gt;flv&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc advanced01&quot;&gt;
+&lt;a href=&quot;http://www.nhk.or.jp/creative/&quot; target=&quot;_blank&quot; style=&quot;color:white&quot;&gt;Video copyright: NHK Creative Library&lt;/a&gt;&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="advancedsamples" id="advanced03" href="samples/bigbang.swf" title="advanced example swf">swf</a>
+				<div class="multiBoxDesc advanced03">
+					<a href="http://www.nhk.or.jp/creative/" target="_blank" style="color:white">Video copyright: NHK Creative Library</a></div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;advancedsamples&quot; id=&quot;advanced01&quot; href=&quot;samples/bigbang.flv&quot; title=&quot;advanced example flv&quot;&gt;flv&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc advanced01&quot;&gt;
+&lt;a href=&quot;http://www.nhk.or.jp/creative/&quot; target=&quot;_blank&quot; style=&quot;color:white&quot;&gt;Video copyright: NHK Creative Library&lt;/a&gt;&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>
+				<a class="advancedsamples" id="advanced04" href="samples/bigbang.wmv" title="advanced example wmv">wmv</a>
+				<div class="multiBoxDesc advanced04">
+					<a href="http://www.nhk.or.jp/creative/" target="_blank" style="color:white">Video copyright: NHK Creative Library</a></div>
+			</dt>
+			<dd>
+				<pre><code>&lt;a class=&quot;advancedsamples&quot; id=&quot;advanced01&quot; href=&quot;samples/bigbang.flv&quot; title=&quot;advanced example flv&quot;&gt;flv&lt;/a&gt;
+&lt;div class=&quot;multiBoxDesc advanced01&quot;&gt;
+&lt;a href=&quot;http://www.nhk.or.jp/creative/&quot; target=&quot;_blank&quot; style=&quot;color:white&quot;&gt;Video copyright: NHK Creative Library&lt;/a&gt;&lt;/div&gt;</code></pre>
+			</dd>
+			<dt>code<dt>
+			<dd>
+				<pre><code>$(&#039;.advancedsamples&#039;).jmultibox({
+	descClassName : &#039;multiBoxDesc&#039;,
+	path:&#039;/multibox/&#039;,
+	overlaybg:&#039;02.png&#039;,
+	useOverlay:1,
+	opac:1,
+	useratio:1,
+	ratio:80
+});</code></pre>
+			</dd>
+
+		</dl>
+		<h2>Features</h2>
+		<dl>
+			<dt>overlay</dt>
+			<dd>
+				Overlay using <a href="http://vegas.jaysalvat.com/" >vegas background jQuery plugin</a><br />
+				Your favorite background image can be chosen.
+			</dd>
+		</dl>
+
+		<h2>usage</h2>
+<pre>
+	<code>
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;styles/multibox.css&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;styles/jquery.vegas.css&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;
+	&lt;!--[if lte IE 6]&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;styles/multibox-ie6.css&quot; type=&quot;text/css&quot; media=&quot;all&quot; /&gt;&lt;![endif]--&gt;
+	&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/jmultibox-uncompressed.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/jquery.vegas.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script type="text/javascript"&gt;
+	$(&#039;.jmultibox&#039;).jmultibox({
+		descClassName:&#039;multiBoxDesc&#039;
+	});
+	&lt;/script&gt;
+	</code>
+</pre>
+		<h2>Options</h2>
+		<dl>
+			<dt>initialWidth</dt>
+			<dd>(number) the width of the box when it first opens while loading the item. Default: 250</dd>
+			<dt>initialHeight</dt>
+			<dd>(number) the width of the box when it first opens while loading the item. Default: 250</dd>
+			<dt>container</dt>
+			<dd>(element) the element that the box will take it coordinates from. Default: document.body</dd>
+			<dt>contentColor</dt>
+			<dd>(string) the color of the content area inside the box. Default: <span class="red">#000</span></dd>
+			<dt>showNumbers</dt>
+			<dd>(boolean) show the number of the item e.g. 2/10. Default: true</dd>
+			<dt>showControls</dt>
+			<dd>(boolean) show the navigation controls. Default: true</dd>
+			<dt>descClassName</dt>
+			<dd>(string) the classname of the divs that contain the description for the item. Default: false</dd>
+			<dt>descMinWidth</dt>
+			<dd>(number) the min width of the description text, useful when the item is small. Default: 400</dd>
+			<dt>descMaxWidth</dt>
+			<dd>(number) the max width of the description text, so it can wrap to multiple lines instead of being on a long single line. Useful when the item is large. Default: 600</dd>
+			<dt>movieWidth</dt>
+			<dd>(number) the default width of the box that contains content of a movie type. Default: <span class="red">576</span></dd>
+			<dt>movieHeight</dt>
+			<dd>(number) the default height of the box that contains content of a movie type. Default: <span class="red">324</span></dd>
+			<dt>offset</dt>
+			<dd>(object) containing x & y coords that adjust the positioning of the box. Default: {x:0, y:0}</dd>
+			<dt>fixedTop</dt>
+			<dd>(number) gives the box a fixed top position relative to the container. Default: false</dd>
+			<dt>path</dt>
+			<dd>(string) location of the resources files, e.g. flv player, etc. Default: <span class="red">''</span></dd>
+			<dt>openFromLink</dt>
+			<dd>(boolean) opens the box relative to the link location. Default: true</dd>
+			<dt><span class="red">opac</span></dt>
+			<dd><span class="red">(decimal) overlay opacity Default: 0.7</span></dd>
+			<dt>useOverlay</dt>
+			<dd>use a semi-transparent background. default: false;</dd>
+			<dt><span class="red">overlaybg</span></dt>
+			<dd><span class="red">(string) overlay image in "overlays" folder Default: '01.png'</span></dd>
+			<dt>onOpen</dt>
+			<dd>(object) a function to call when the box opens.</dd>
+			<dt>onClose</dt>
+			<dd>(object) a function to call when the box closes.</dd>
+			<dt><span class="red">easing</span></dt>
+			<dd><span class="red">(string) effect of jQuery Default: 'swing'</span></dd>
+			<dt><span class="red">useratio</span></dt>
+			<dd><span class="red">(boolean) windows size follows ratio. (iframe or Youtube)  Default: false</span></dd>
+			<dt><span class="red">ratio</span></dt>
+			<dd><span class="red">(number) window ratio Default: 90</span></dd>
+		</dl>
+
+		<h2>License</h2>
+		<dl>
+			<dt>Dual licensed under the MIT and GPL licenses.</dt>
+			<dt>Copyright (C) Yoshiki Kozaki</dt>
+		</dl>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jmultibox.min.js" type="text/javascript"></script>
+		<script src="js/jquery.vegas.js" type="text/javascript"></script>
+
+
+		<script type="text/javascript">
+			(function($){
+				$(function(){
+					$('.sampleimages').jmultibox({
+						descClassName : 'multiBoxDesc',
+						path:'/multibox/',
+						overlaybg:'sheep-57706_1920.jpg',
+						useOverlay:1,
+						opac:1
+					});
+
+					$('.sitesamples').jmultibox({
+						descClassName : 'multiBoxDesc',
+						path:'/multibox/',
+						overlaybg:'sheep-57706_1920.jpg',
+						useOverlay:1,
+						opac:0.7,
+						useratio:1,
+						ratio:80
+					});
+
+					$('.multisamples').jmultibox({
+						descClassName : 'multiBoxDesc',
+						path:'/multibox/',
+						overlaybg:'14.png',
+						useOverlay:1,
+						opac:1,
+						useratio:1,
+						ratio:80
+					});
+
+					$('.advancedsamples').jmultibox({
+						descClassName : 'multiBoxDesc',
+						path:'/multibox/',
+						overlaybg:'02.png',
+						useOverlay:1,
+						opac:1,
+						useratio:1,
+						ratio:80
+					});
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>
